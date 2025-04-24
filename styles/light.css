@@ -1,16 +1,186 @@
-/*
-  Специально для светлой темы при наличии класса.
-  Здесь окажутся стили, которые нужно переопределить принудительно,
-  переключая тему
-*/
-
 :root.theme-light {
-  /* сохраните этот селектор в приведённом виде.
-    Так стили написанные ниже будут иметь больший вес,
-    чем стили в медиазапросе предпочтений пользователя
-  */
+  --bg-image: url(../images/cover-image-light.png);
+  --color-bg: #fff1f7;
+  --color-text-h1: #ffc2e6;
+  --color-shadow-title: #ff8dcb;
+  --color-shadow: #ff8dcb;
+  --title-decor-bg: #ff8dcb;
+  --title-decor-text: #353430;
+  --color-text-h2: #353430;
+  --color-menu-bttn: #353430;
+  --color-menu-bttn-act: 53, 52, 48;
+  --color-decor-elements: #353430;
+  --main-color-text: #353430;
 }
 
 .theme-light .page {
-  /* Вам также нужно будет написать ряд подобных селекторов */
+  background-color: var(--color-bg);
+  background-image: var(--bg-image);
+}
+
+.theme-light .header {
+  background-image: var(--bg-image, url(../images/cover-image-light.png));
+}
+
+.theme-light .decorated-zone::before {
+  border-block-start: 1px solid var(--color-decor-elements);
+  border-inline-end: 1px solid var(--color-decor-elements);
+}
+
+.theme-light .decorated-zone::after {
+  border-block-end: 1px solid var(--color-decor-elements);
+  border-inline-start: 1px solid var(--color-decor-elements);
+}
+
+.theme-light .rec-indicator {
+  display: none;
+}
+
+
+.theme-light .header__theme-menu-button {
+  color: var(--color-menu-bttn);
+}
+
+.theme-light .header__theme-menu-button_type_light:active {
+  border: 1px currentColor solid;
+}
+
+.theme-light .header__title {
+  color: var(--color-text-h1);
+  text-shadow: 4px 4px 0 var(--color-shadow);
+}
+
+.theme-light .title-decor,
+.title-decor-text {
+  background-color: var(--title-decor-bg);
+  color: var(--color-text-h2);
+}
+
+.theme-light .content-section__title {
+  color: var(--color-text-h2);
+}
+
+.theme-light .article__text {
+  background-color: var(--color-bg);
+  color: var(--main-color-text);
+}
+
+.theme-light .article__text-shadow-link {
+  text-shadow: 2px 2px 0 var(--color-shadow);
+}
+
+.theme-light .article__text-link {
+  color: var(--main-color-text);
+}
+
+.theme-light .header__theme-menu-button:not(.header__theme-menu-button_active):hover {
+  border: 1px solid rgba(var(--color-menu-bttn-act), 0.4);
+}
+
+.theme-light .footer__title {
+  color: var(--color-text-h1);
+  text-shadow: 2px 2px 0 var(--color-shadow);
+}
+
+.theme-light .for__decoration::before {
+  border-block-start: 1px solid var(--color-decor-elements);
+  border-inline-end: 1px solid var(--color-decor-elements);
+}
+
+.theme-light .for__decoration::after {
+  border-block-end: 1px solid var(--color-decor-elements);
+  border-inline-start: 1px solid var(--color-decor-elements);
+}
+
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-image: url(../images/cover-image-light.png);
+    --color-bg: #fff1f7;
+    --color-text-h1: #ffc2e6;
+    --color-shadow-title: #ff8dcb;
+    --color-shadow: #ff8dcb;
+    --title-decor-bg: #ff8dcb;
+    --title-decor-text: #353430;
+    --color-text-h2: #353430;
+    --color-menu-bttn: #353430;
+    --color-menu-bttn-act: 53, 52, 48;
+    --color-decor-elements: #353430;
+    --main-color-text: #353430;
+  }
+  
+  .theme-light .page {
+    background-color: var(--color-bg);
+    background-image: var(--bg-image);
+  }
+  
+  .theme-light .header {
+    background-image: var(--bg-image, url(../images/cover-image-light.png));
+  }
+  
+  .theme-light .decorated-zone::before {
+    border-block-start: 1px solid var(--color-decor-elements);
+    border-inline-end: 1px solid var(--color-decor-elements);
+  }
+  
+  .theme-light .decorated-zone::after {
+    border-block-end: 1px solid var(--color-decor-elements);
+    border-inline-start: 1px solid var(--color-decor-elements);
+  }
+  
+  
+  .theme-light .header__theme-menu-button {
+    color: var(--color-menu-bttn);
+  }
+
+  .theme-light .header__theme-menu-button_type_auto:active {
+    border: 1px currentColor solid;
+  }
+  
+  .theme-light .header__title {
+    color: var(--color-text-h1);
+    text-shadow: 4px 4px 0 var(--color-shadow);
+  }
+  
+  .theme-light .title-decor,
+  .title-decor-text {
+    background-color: var(--title-decor-bg);
+    color: var(--color-text-h2);
+  }
+  
+  .theme-light .content-section__title {
+    color: var(--color-text-h2);
+  }
+  
+  .theme-light .article__text {
+    background-color: var(--color-bg);
+    color: var(--main-color-text);
+  }
+  
+  .theme-light .article__text-shadow-link {
+    text-shadow: 2px 2px 0 var(--color-shadow);
+  }
+  
+  .theme-light .article__text-link {
+    color: var(--main-color-text);
+  }
+  
+  .theme-light .header__theme-menu-button:not(.header__theme-menu-button_active):hover {
+    border: 1px solid rgba(var(--color-menu-bttn-act), 0.4);
+  }
+  
+  .theme-light .footer__title {
+    color: var(--color-text-h1);
+    text-shadow: 2px 2px 0 var(--color-shadow);
+  }
+  
+  .theme-light .for__decoration::before {
+    border-block-start: 1px solid var(--color-decor-elements);
+    border-inline-end: 1px solid var(--color-decor-elements);
+  }
+  
+  .theme-light .for__decoration::after {
+    border-block-end: 1px solid var(--color-decor-elements);
+    border-inline-start: 1px solid var(--color-decor-elements);
+  }
 }
